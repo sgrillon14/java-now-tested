@@ -23,7 +23,7 @@ public class MySampleServiceTest {
     @Test
     public void testSample() {
         mySampleService.setClock(Clock.fixed(LocalDateTime.of(2019, 11, 28, 10, 00).toInstant(ZoneOffset.UTC), ZoneId.systemDefault()));
-        assertEquals(LocalDateTime.of(2019, 11, 28, 10, 00).toInstant(ZoneOffset.UTC), mySampleService.sample());
+        assertEquals(LocalDateTime.ofInstant(LocalDateTime.of(2019, 11, 28, 10, 00).toInstant(ZoneOffset.UTC), ZoneId.systemDefault()), mySampleService.sample());
     }
 
 }
